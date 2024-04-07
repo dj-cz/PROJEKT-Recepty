@@ -11,6 +11,7 @@ body {
 	text-align: center;
 	font-size: 14px;
 	color: silver;
+	text-shadow: none;
 }
 
 .paticka a {
@@ -33,3 +34,131 @@ Nastav je receptům jako obrázky na pozadí (tj. nepřidávej je jako <img> do 
 Na rozložení prvků NEPOUŽÍVEJ absolutní pozicování, ale pouze flexboxy.
 Flexboxy mohou být vnořené do sebe, klidně několikrát.
 */
+
+body {
+	color: white;
+	font-family: "Source Sans 3", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 14px;
+	text-shadow: 1px 1px 5px black;
+}
+
+.recept {
+	background-size: cover;
+	background-position: center;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.popis {
+	display: flex;
+	justify-content: space-between;
+}
+
+h1, h2 {
+	font-family: "Raleway", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 800;
+	font-style: normal;
+	margin: 0;
+}
+
+.big {
+	min-height: 200px;
+}
+
+.small {
+	min-height: 90px;
+}
+
+h1 {
+	font-size: 28px;
+}
+
+h2 {
+	font-size: 18px;
+}
+
+.salat {
+	background-image: url(images/salat.jpg);
+}
+
+.chlebicek {
+	background-image: url(images/chlebicek.jpg);
+}
+
+.tacos {
+	background-image: url(images/tacos.jpg);
+}
+
+.pita {
+	background-image: url(images/cizrna.jpg);
+}
+
+.burger {
+	background-image: url(images/burger.jpg);
+}
+
+
+@media screen and (min-width: 480px) {
+	.recepty {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 20px;
+	}
+
+	.big {
+		min-height: 250px; 
+		flex-basis: 100%;
+	}
+
+	.small-ones {
+		display: flex;
+		flex-wrap: wrap;
+		flex-grow: 1;
+	}
+
+	.small {
+		min-height: 150px;
+		flex-basis: 50%;
+	}
+
+	h1 {
+		font-size: 36px;
+	}
+
+	h2 {
+		font-size: 22px;
+	}
+}
+
+
+@media screen and (min-width: 860px) {
+	
+	.big {
+		min-height: 400px;
+		flex-basis: calc(100% / 3);
+	}
+
+	.small {
+		min-height: 200px;
+	}
+
+	.small-ones {
+		display: flex;
+		flex-wrap: wrap;
+		flex-basis: 50%;
+	}
+
+	h1 {
+		font-size: 48px;
+	}
+
+	h2 {
+		font-size: 28px;
+	}
+}
